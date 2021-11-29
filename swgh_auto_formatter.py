@@ -35,8 +35,9 @@ def get_args():
 def main():
     """Makes Soup"""
     args = get_args()
-    df = imp_csv(args.file)
-    exp_csv(df,args.outfile)
+    df = imp_csv(args.file) # imports the file as a dataframe from pandas using the imp_csv() function.
+    exp_csv(df,args.outfile) #Exports the dataframe as a csv with an optional file to specify it as.
+    
 # --------------------------------------------------
 
 
@@ -46,13 +47,17 @@ def imp_csv(fh):
     df = pd.read_csv(fh.name, delimiter = ",", skiprows=1)
     df = df.drop(labels=[0,1],axis=0)
     df.columns = ['datetime','record','battery','panel_t','avg_RH1','avg_AirT1','avg_PAR','total_PAR','irri_duration','avg_ATT_C','avg_CTT_C','avg_incoming_SW','avg_outgoing_SW','avg_incoming_LW','avg_outgoing_LW','avg_RH2','avg_AirT2','avg_CO2','avg_VPD']
+    print(type(df))
+
     return df
 
 def exp_csv(df,outfile):
     """exports the CSV to the name specified."""
     df.to_csv(outfile, index=False)
     pretty_print(df,outfile)
+
     
+
     
 # --------------------------------------------------
 
@@ -64,6 +69,7 @@ def pretty_print(df,outfile):
     print("="*(len(outfile)+13))
     print('Exported to: ' + outfile)
     print("="*(len(outfile)+13))
+
 
 if __name__ == '__main__':
     main()
