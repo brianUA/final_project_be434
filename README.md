@@ -12,6 +12,7 @@ to test this program with some sample data run:
 ./swgh_auto_formatter.py raw_data/CR1000_Test_2021_11_27_10_22_34.dat
 
 To change the output file name use the -o or --outfile flag:
+
 ./swgh_auto_formatter.py raw_data/CR1000_Test_2021_11_27_10_22_34.dat -o MY_NEW_FILENAME.FILETYPE
 
 If you don't specify an output file. The program will default to "today's_date_formmated.csv"
