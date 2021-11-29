@@ -6,7 +6,6 @@ Purpose: Autoformat Files from campbell scientific for SWGH
 """
 
 import argparse
-import sys
 import pandas as pd
 from datetime import date
 
