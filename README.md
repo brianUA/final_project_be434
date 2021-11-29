@@ -17,5 +17,7 @@ It takes a an optional -o or --outfile argument where you can specify the filena
 
 -datetime 
 
+## Added test.py
 
+To use test suite run $ pytest test.py
 
