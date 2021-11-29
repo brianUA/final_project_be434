@@ -36,10 +36,7 @@ def main():
     """Makes Soup"""
     args = get_args()
     df = imp_csv(args.file)
-    print(df)
     exp_csv(df,args.outfile)
-
-
 # --------------------------------------------------
 
 
@@ -54,9 +51,19 @@ def imp_csv(fh):
 def exp_csv(df,outfile):
     """exports the CSV to the name specified."""
     df.to_csv(outfile, index=False)
+    pretty_print(df,outfile)
+    
     
 # --------------------------------------------------
 
+def pretty_print(df,outfile):
+    """prints a nice output to summarise CSV contents"""
+    title = "Formatted and relabled CSV:"
+    print("="*len(title) + "\n" + title + "\n" + "="*len(title))
+    print(df)
+    print("="*(len(outfile)+13))
+    print('Exported to: ' + outfile)
+    print("="*(len(outfile)+13))
 
 if __name__ == '__main__':
     main()
