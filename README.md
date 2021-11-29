@@ -8,7 +8,14 @@ The script is called swgh_auto_formatter.py
 
 It takes a an optional -o or --outfile argument where you can specify the filename as well as a positional filename input to tell it which file to format.
 
+to test this program with some sample data run:
+./swgh_auto_formatter.py raw_data/CR1000_Test_2021_11_27_10_22_34.dat
 
+To change the output file name use the -o or --outfile flag:
+
+./swgh_auto_formatter.py raw_data/CR1000_Test_2021_11_27_10_22_34.dat -o MY_NEW_FILENAME.FILETYPE
+
+If you don't specify an output file. The program will default to "today's_date_formmated.csv"
 
 ## Required Libraries:
 -argparse
@@ -17,5 +24,7 @@ It takes a an optional -o or --outfile argument where you can specify the filena
 
 -datetime 
 
+## Added test.py
 
+To use test suite run $ pytest test.py
 
