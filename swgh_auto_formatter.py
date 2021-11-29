@@ -47,7 +47,6 @@ def imp_csv(fh):
     df = pd.read_csv(fh.name, delimiter = ",", skiprows=1)
     df = df.drop(labels=[0,1],axis=0)
     df.columns = ['datetime','record','battery','panel_t','avg_RH1','avg_AirT1','avg_PAR','total_PAR','irri_duration','avg_ATT_C','avg_CTT_C','avg_incoming_SW','avg_outgoing_SW','avg_incoming_LW','avg_outgoing_LW','avg_RH2','avg_AirT2','avg_CO2','avg_VPD']
-    print(type(df))
 
     return df
 
