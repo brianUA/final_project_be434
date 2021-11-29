@@ -15,7 +15,7 @@ def get_args():
     """Get command-line arguments"""
 
     parser = argparse.ArgumentParser(
-        description='Rock the Casbah',
+        description='Converts a delimited file to a correctly formatted CSV for my greenhouse',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('-o',
@@ -33,16 +33,16 @@ def get_args():
 
 # --------------------------------------------------
 def main():
-    """Makes Soup"""
+    """makes it run"""
+
     args = get_args()
     df = imp_csv(args.file) # imports the file as a dataframe from pandas using the imp_csv() function.
     exp_csv(df,args.outfile) #Exports the dataframe as a csv with an optional file to specify it as.
     
 # --------------------------------------------------
 
-
 def imp_csv(fh):
-    """imports the indicated csv file as a series of lists"""
+    """imports the indicated csv file as a pandas dataframe"""
     
     df = pd.read_csv(fh.name, delimiter = ",", skiprows=1)
     df = df.drop(labels=[0,1],axis=0)
@@ -50,14 +50,14 @@ def imp_csv(fh):
 
     return df
 
+# --------------------------------------------------
+
 def exp_csv(df,outfile):
-    """exports the CSV to the name specified."""
+    """exports the CSV to the name specified"""
+
     df.to_csv(outfile, index=False)
     pretty_print(df,outfile)
 
-    
-
-    
 # --------------------------------------------------
 
 def pretty_print(df,outfile):
