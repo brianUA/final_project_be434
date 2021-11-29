@@ -4,7 +4,10 @@ This project aims to make my life in the lab and at the greenhouse easier. This 
 
 ## Required Libraries:
 -argparse
+
 -pandas
+
 -datetime
+
 
 
